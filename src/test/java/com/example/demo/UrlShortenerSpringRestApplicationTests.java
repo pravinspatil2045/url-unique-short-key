@@ -28,7 +28,7 @@ class UrlShortenerSpringRestApplicationTests {
 		// arrange
 
 		// act
-		ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:"+ port +"/get?url=google.com",String.class);
+		ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:"+ port +"/get?url=udemy.com",String.class);
 		
 		// assert
 		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);

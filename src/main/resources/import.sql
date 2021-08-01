@@ -1,0 +1,1 @@
+INSERT INTO URL (url_id,address,unique_short_key,count) VALUES (100,'udemy.com','abcxyz',0);
