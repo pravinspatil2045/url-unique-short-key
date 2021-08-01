@@ -3,6 +3,8 @@ package com.example.demo.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.exception.UniqueShortKeyNotFoundException;
+import com.example.demo.model.URL;
 import com.example.demo.repository.URLRepository;
 
 @Service
@@ -19,7 +21,12 @@ public class URLService {
 		
 		System.out.println("URLService : getUniqueShortKey() : url :" + url);
 		
-		return aURLRepository.findByAddress(url).getUnique_short_key();
+		URL aURL = aURLRepository.findByAddress(url);
+		if(aURL == null) {
+			throw new UniqueShortKeyNotFoundException();
+		}
+		
+		return aURL.getUnique_short_key();
 	}
 
 }

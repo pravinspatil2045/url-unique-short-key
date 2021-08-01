@@ -13,6 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
+import com.example.demo.exception.UniqueShortKeyNotFoundException;
 import com.example.demo.service.URLService;
 
 @RunWith(SpringRunner.class)
@@ -31,6 +32,16 @@ public class URLControllerTest {
 		given(aURLService.getUniqueShortKey(anyString())).willReturn("abc");
 		
 		mockMvc.perform(MockMvcRequestBuilders.get("/get?url=google.com")).andExpect(status().isOk());
+	}
+	
+	@Test
+	public void getUniqueShortKey_notFound() throws Exception {
+		given(aURLService.getUniqueShortKey(anyString()))
+				.willThrow(new UniqueShortKeyNotFoundException());
+
+		mockMvc.perform(MockMvcRequestBuilders.get("/get?url=yahoo.com"))
+				.andExpect(status().isNotFound());
+
 	}
 
 }

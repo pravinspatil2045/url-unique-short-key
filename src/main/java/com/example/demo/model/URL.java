@@ -14,6 +14,18 @@ public class URL {
 	private String unique_short_key;
 	private int count;
 
+	public URL() {
+		super();
+	}
+
+	public URL(Long url_id, String address, String unique_short_key, int count) {
+		super();
+		this.url_id = url_id;
+		this.address = address;
+		this.unique_short_key = unique_short_key;
+		this.count = count;
+	}
+
 	public Long getUrl_id() {
 		return url_id;
 	}
