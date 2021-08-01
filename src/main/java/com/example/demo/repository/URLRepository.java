@@ -7,6 +7,6 @@ import com.example.demo.model.URL;
 
 public interface URLRepository extends JpaRepository<URL, Long> {
 
-	public String findByURL(String string);
+	public URL findByAddress(String string);
 
 }

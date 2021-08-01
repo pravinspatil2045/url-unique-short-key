@@ -19,7 +19,7 @@ public class URLService {
 		
 		System.out.println("URLService : getUniqueShortKey() : url :" + url);
 		
-		return aURLRepository.findByURL(url);
+		return aURLRepository.findByAddress(url).getUnique_short_key();
 	}
 
 }

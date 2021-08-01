@@ -10,7 +10,7 @@ public class URL {
 	@Id
 	@GeneratedValue
 	private Long url_id;
-	private String url_address;
+	private String address;
 	private String unique_short_key;
 	private int count;
 
@@ -22,12 +22,12 @@ public class URL {
 		this.url_id = url_id;
 	}
 
-	public String getUrl_address() {
-		return url_address;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setUrl_address(String url_address) {
-		this.url_address = url_address;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public String getUnique_short_key() {

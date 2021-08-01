@@ -27,7 +27,7 @@ public class URLServiceTest {
 	@Test
 	public void getUniqueShortKey_returnUniqueShortKey() throws Exception{
 		
-		given(aURLRepository.findByURL("google.com")).willReturn("");
+		given(aURLRepository.findByAddress("google.com").getUnique_short_key()).willReturn("");
 		
 		String shortKey = aURLService.getUniqueShortKey("google.com");
 		assertThat(shortKey).isEqualTo("");
