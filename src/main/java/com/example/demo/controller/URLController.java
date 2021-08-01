@@ -20,7 +20,7 @@ public class URLController {
 	@GetMapping("/get")
 	public String getUniqueShortKey(@RequestParam("url") String url) {
 		
-		System.out.println("URLController : getUniqueShortKey()");
+		System.out.println("URLController : getUniqueShortKey() : url :" + url);
 		
 		return aURLService.getUniqueShortKey(url);
 	} 
